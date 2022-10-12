@@ -3,7 +3,7 @@
 app.controller("ArticleAddController", function ($scope, $http) {
 
 
-    $scope.CategoryAdd = function () {
+    $scope.ArticleAdd = function () {
         $http({
             method: "POST",
             headers: { "Contet-Type": "Application/json;charset=utf-8" },
