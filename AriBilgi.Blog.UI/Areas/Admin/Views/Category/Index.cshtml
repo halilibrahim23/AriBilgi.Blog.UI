@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h1 class="mt-4">Kategoriler</h1>
+<ol class="breadcrumb mb-4">
+     <li class="breadcrumb-item"><a href="/Admin/Home/Index">Admin Paneli</a></li>
+    <li class="breadcrumb-item active">Kategoriler</li>
+</ol>
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table mr-1"></i>
+        Kategoriler Tablosu
+
+        <div class="float-right">
+            <a href="/Admin/Category/Add" class="btn btn-primary">Yeni Ekle</a>
+        </div>
+    </div>
+    <div class="card-body">
+
+        <div class="table-responsive" ng-app="CategoryApp" ng-controller="CategoryController">
+            <table class="table table-bordered" id="dtCategory" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Kategori Adı</th>
+                        <th>Kategori Açıklaması</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="category in CategoryList">
+                        <td>
+                            {{category.id}}
+                        </td>
+                        <td>
+                            {{category.title}}
+                        </td>
+                        <td>
+                            {{category.content}}
+                        </td>
+                        <td>
+                            <a ng-click="CategoryDelete(category.id)" class="btn-sm btn-danger">Sil</a>  
+                            <a href="/Admin/Category/Edit?Id={{category.id}}" class="btn-sm btn-warning">Düzenle</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/Admin/pages/category.js"></script>
+}
