@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+}
+
+
+<h1 class="mt-4">Makale Düzenle</h1>
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a href="/Admin/Home/Index">Admin Paneli</a></li>
+    <li class="breadcrumb-item"><a href="/Admin/Article/Index">Makaleler</a></li>
+    <li class="breadcrumb-item active">Makale Düzenle</li>
+</ol>
+
+<div class="col-12" ng-app=ArticleEditApp" ng-controller="ArticleEditController">
+
+    <div class="form-group">
+        <label>Makale Başlığını Giriniz:</label>
+        <input class="form-control" ng-model="article.title" />
+    </div>
+
+    <div class="form-group">
+        <label>Makale Açıklamasını Giriniz:</label>
+        <input class="form-control" ng-model="category.content" />
+    </div>
+
+    <div class="form-group">
+        <a ng-click="ArticleEdit()" class="btn btn-primary">Kaydet</a>
+    </div>
+
+
+</div>
+
+@section Scripts{
+    <script src="~/Admin/pages/articleEdit.js"></script>
+}
+
